@@ -1,0 +1,6 @@
+C:\localWebSite\CGI C program\Animals\Debug\animals.exe
+C:\localWebSite\CGI C program\Animals\Debug\animals.pdb
+C:\localWebSite\Test 1\CGI C program\Animals\Debug\animals.exe
+C:\localWebSite\Test 1\CGI C program\Animals\Debug\animals.pdb
+C:\localWebSite\Dir 1\Dir 2\Test 1\CGI C program\Animals\Debug\animals.exe
+C:\localWebSite\Dir 1\Dir 2\Test 1\CGI C program\Animals\Debug\animals.pdb

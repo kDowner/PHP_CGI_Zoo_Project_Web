@@ -1,0 +1,83 @@
+/*
+FILE			      : ext-css-style-zoo.css
+PROJECT			    : A-03 : Animal-Serve – website developed in CGI and PHP (PROG2001)
+FIRST VERSION	  : 2020-10-24 (Rev.04)
+AUTHORS			    : Dusan Sasic & Kevin Downer
+DESCRIPTION		  : The styling external CSS elements for the Animal Zoo project.
+*/
+
+/* Overall webpage styling */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(0, 0, 0);
+}
+
+/* The animal images presented to User */
+img{ 
+  float: left;  
+  z-index: -1;
+  border-radius: 10px;
+  border: 5px solid rgb(210, 210, 210);
+}
+
+/* The animal text file bullet points */
+ul.a {
+  list-style-position: outside;
+}
+
+/* The animal text div style */
+.content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* The animal text title style */
+.animaltitle{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(196, 230, 45);
+}
+
+/* animal text detail styling */
+.textAllAnimal {
+  column-count: 3;
+  column-gap: 40px;
+  column-rule-style: outset;
+  column-rule-width: 10px;
+}
+
+/* Second page animal description box */
+#detailTxtBox {
+  position: relative;
+  border-radius: 10px;
+  background: #123013;
+  color: rgb(224, 224, 224);
+  padding: 000px;
+  width: 400px;
+  height: 400px;
+  overflow: auto;
+  border: 5px solid rgb(204, 204, 204);
+}
+
+/* First page User name input field */
+.helloName {
+  text-decoration: underline;
+  color: rgb(153, 152, 152);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* First page drop down animal choices */
+.innerDropDown {
+  border: 2px solid rgb(208, 255, 0);
+  padding: 10px;
+  border-top-left-radius: 25px;
+  color: rgb(31, 31, 31);
+  font-family: Arial, Helvetica, sans-serif;
+  background: #01e609;
+}
+
+/* User input validation error feedback */
+.errorFeedback {
+  color: rgb(241, 15, 15);
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,98 @@
+<!--
+FILE			: php-zoo.html
+PROJECT			: A-03 : Animal-Serve – website developed in CGI and PHP (PROG2001)
+FIRST VERSION	: 2020-10-24 (Rev.04)
+AUTHORS			: Dusan Sasic & Kevin Downer
+DESCRIPTION		: A Register form for submitting User choices for a virtual zoo visit.
+The User must enter a valid Name, Animal Choice.
+If the User tries to leave one of the mandatory fields blank or in the wrong required Name format, or doesn't
+choose an Animal from the drop-down menu, they will have error messages displayed, indicating what they need to do.
+Once all requirements are met and validated by the program, the form will be sent, to ingest the User input data
+provided and respond with and image of the animal and some details to read about it. 
+NOTE:  Sean Clarke's original 'S-03-Forms-to_Complete-and-Submit.html' was of great assistance in understanding the machinations
+of the regex and verification procedures.  I have used parts of his error messaging system style in my program.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PHP Zoo</title>
+    <link rel="stylesheet" href="ext-css-style-zoo.css">
+    <script type="text/javascript">
+
+        /* 
+         * FUNCTION		: validateAll
+         * DESCRIPTION	: The main validation for the User input on the form (good send, fail do not send).
+         * PARAMETERS	: void
+         * RETURN		: shouldSubmit : bool :  Decides if the required User inputs are present and valid.
+         * Form sent if all the validation requirements are met.
+         */
+        function validateAll() {
+            // the main true/false validator of the form.  Must maintain 'true' through validitiy checks to submit
+            var shouldSubmit = true;
+
+            // ReGex compare test of Name formatting User input
+            // NOTE:  Change Regex to whatever you need to make the Name validity work with CGI
+            var nameCheck = /^[a-zA-Z]+$/.test(document.getElementById("in_name").value);
+
+            // Obtain User animal selection choice from dropdown
+            var animalCodeCheck = document.getElementById("combo_animals").value;
+
+            // checks the true-false conditions of User name, animal choice input options
+            if ((nameCheck == false) ||
+                (animalCodeCheck == "")) {
+
+                // build any error messages found based on User input
+                var errMsg = "<br></br><br>Unable to complete the form due to missing information or formatiing issues.<br>The following fields in the form are <b>MANDATORY:</b>:";
+                if (nameCheck == false) errMsg = errMsg + "<br></br><br><li><b><i>Name: First Name Only</i></b></li>(ex. format should be <b>Sean</b>)";
+                if (animalCodeCheck == "") errMsg = errMsg + "<br></br><br><li><b><i>Animal: Selection Choice Missing</i></b></li>(please select an option from the <b>drop-down menu</b>)";
+
+                // builds the above error details into string fileand sends them to the User
+                errMsg = errMsg + "</ul>";		// close the unordered list element
+
+                // error list sent to User for review and required updates
+                document.getElementById("userFeedback").innerHTML = errMsg;
+
+                // there has been a false in one of the input validations:  FORM NOT SENT
+                shouldSubmit = false;
+            }
+
+            // Result of true/false decision on whether to send the form or not
+            return shouldSubmit
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="helloName" align="center">
+        <!--The validation point where the form is sent off to validation.-->
+        <!--If all is well, the form data is sent to the server-->
+        <FORM name="AnimalForm" action="animals.php" method="POST" onsubmit="return validateAll();">
+            <!--Welcome top-->
+            <h1>Welcome to the mysterious Zoo...</h1>
+            <!--User name-->
+            <p>Please enter your first name:</p>
+            <input type="text" id="in_name" name="in_name"></input>
+            <!--Animal Drop down selection-->
+            <p>Please select an unusual animal:</p>
+            <select class="innerDropDown" id="combo_animals" name="combo_animals" size="6">
+                <option value="" selected></option>
+                <option value="basilisk">Basilisk</option>
+                <option value="cyclops">Cyclops</option>
+                <option value="goblin">Goblin</option>
+                <option value="purpleworm">Purpleworm</option>
+                <option value="skeleton">Skeleton</option>
+                <option value="troll">Troll</option>
+            </select>
+            <br><br>
+            <!--User presses button to enter the zoo (input results webpage)-->
+            <input id="in_id" name="in_id" type="submit" value="Enter the zoo..." onclick="validateAll();"></input>
+        </FORM>
+
+    </div>
+    <!--Error Conditions show up here for User to indicate what is need to validate and submit form-->
+    <div class="errorFeedback" align="center" width="20%" id="userFeedback"></div>
+</body>
+
+</html>

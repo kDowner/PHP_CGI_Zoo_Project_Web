@@ -1,0 +1,8 @@
+﻿D:\Visual Studio\IDE\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+D:\Visual Studio\IDE\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(453,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  animals.cpp
+C:\localWebSite\Dir 1\Dir 2\Test 1\CGI C program\Animals\animals.cpp(105,9): warning C4476: 'printf' : unknown type field character '\"' in format specifier
+C:\localWebSite\Dir 1\Dir 2\Test 1\CGI C program\Animals\animals.cpp(105,9): warning C4476: 'printf' : unknown type field character ';' in format specifier
+C:\localWebSite\Dir 1\Dir 2\Test 1\CGI C program\Animals\animals.cpp(130,9): warning C4476: 'printf' : unknown type field character '\"' in format specifier
+  LINK : .\Debug\animals.exe not found or not built by the last incremental link; performing full link
+  animals.vcxproj -> C:\localWebSite\Dir 1\Dir 2\Test 1\CGI C program\Animals\.\Debug\animals.exe
