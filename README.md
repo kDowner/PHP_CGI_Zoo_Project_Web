@@ -1,4 +1,4 @@
-# PHP_CGI_Zoo_Project_Web
+# Zoo Web Layout Browser
  Zoo Web Page Browser (PHP, CGI)
 
 Description:
